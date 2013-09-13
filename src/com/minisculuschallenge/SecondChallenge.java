@@ -3,7 +3,7 @@ package com.minisculuschallenge;
 import java.io.IOException;
 import java.net.URL;
 
-public class FirstChallenge {
+public class SecondChallenge {
 
     private URL answerUrl;
 
@@ -29,7 +29,7 @@ public class FirstChallenge {
 
     public void answerQuestion() throws IOException {
 
-        String answer = encodeString("Strong NE Winds!");
+        String answer = encodeString("The Desert Fox will move 30 tanks to Calais at dawn");
         System.out.println("answer: " + answer + " url:" +answerUrl);
         new Questions().answerQuestion(answerUrl, answer);
     }
@@ -37,7 +37,7 @@ public class FirstChallenge {
     public char encodeCharacter(char c) {
         for (char i = 0; i < lookuptable.length; i++) {
             if (lookuptable[i] == c) {
-                return lookuptable[(i+6) % lookuptable.length];
+                return lookuptable[(i+3) % lookuptable.length];
             }
         }
         throw new RuntimeException("Oh noes");

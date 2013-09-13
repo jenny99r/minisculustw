@@ -32,8 +32,10 @@ public class Questions {
         out.write("{\"answer\": \"" + answer + "\"}");
         out.close();
 
-        if (con.getResponseCode() == 406) {
-            System.out.println("Wrong answer!");
+        if (con.getResponseCode() != 200) {
+            System.out.println("Wrong answer! code: " + con.getResponseCode());
+            System.out.println(IOUtils.toString(con.getInputStream()));
+
         } else {
             System.out.println(IOUtils.toString(con.getInputStream()));
         }
